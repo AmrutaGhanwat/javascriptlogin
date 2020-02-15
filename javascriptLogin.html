@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript</title>
+        <style>
+        *{
+            box-sizing: border-box;
+            align-content: center;
+        }
+        .container{
+            max-width: 300px;
+            margin: auto;
+            background: teal;
+            padding: 20px;
+            color: #fff;
+            font-family: Arial;
+            text-align: center;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        input[type=text],input[type=password],input[type=submit]{
+          width: 90%;
+          padding: 10px;
+          font-size: 17px;
+          border-radius: 5px;
+          border: none;
+          outline: none;
+          margin: 10px;
+         }
+        input[type=submit]{  
+        background: red;
+        color:#fff;
+        font-weight: bold;
+        }
+        input[type=submit]:hover{
+        background: orange;
+        }
+        a{
+            text-decoration: none;
+            color:#fff;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+        </style>
+        <script>
+
+        function validateForm(){
+            var x=document.forms["myForm"]["username"].value;
+            var y=document.forms["myForm"]["pw"].value;
+            if(x==null || x=="")
+            {
+                alert("username required");
+                return false;
+            }
+            if(y==null || y=="")
+            {
+                alert("password required");
+                return false;
+ 
+            }
+        }
+        
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Sign In</h2>
+            <form name="myForm" action="submit.html" onsubmit="return validateForm()" method="post">
+            <input type="text" name="username" placeholder="Username"><br>
+            <input type="password" name="pw" placeholder="Password"><br>
+            <input type="submit" value="Submit"><br>
+            <p><a href="#">Forget your Password?</a></p>
+
+            </form>
+        </div>
+    </body>
+</html>
